@@ -1,0 +1,32 @@
+<div class="login-container">
+    <div class="logo-container">
+        <img src="joca.svg" alt="Logo Joca" class="logo"/>
+        <h1>Joca</h1>
+    </div>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="email" formControlName="email" id="email" placeholder="Insira seu E-mail">
+            <!--<div *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched" class="error">
+            Insira um email válido.
+            </div> -->
+        </div>
+        <div class="form-group">
+            <label for="password">Senha:</label>
+            <input type="password" FormControlName="password" id="password" placeholder="Insira sua senha">
+            <!--<div *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched" class="error">
+            A senha é obrigatória.
+            </div> -->
+        </div>
+        <div class="forgot-conteiner">
+            <a routerLink="/forgot-password" class="forgot-password">Esqueceu sua senha?</a> 
+        </div>
+        
+        <button type="submit">Entra</button>
+
+    </form>
+    <div class="register">
+        <p>Não tem uma conta ainda?</p> <a routerLink="/register">Cadastre-se</a>
+    </div>
+
+</div>
