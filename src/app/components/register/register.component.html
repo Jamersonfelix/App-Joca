@@ -1,6 +1,56 @@
-<div>
-    <img src="joca.svg" alt="Logo Joca" class="logo">
-    <h2>Joca</h2>
+<div class="register-container">
+    <div class="logo-container">
+        <img src="joca.svg" alt="Logo Joca" class="logo">
+        <h2>Joca</h2>
+    </div>
+    
+    <form class="form-container" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="linha">
+            <div>
+                <label for="nome">Nome:</label>
+                <input formControlName="nome" placeholder="Nome">
+            </div>
+            <div>
+                <label for="sobrenome">Sobrenome:</label>
+                <input formControlName="sobrenome" placeholder="Sobrenome">
+            </div>
+        </div>
+        <div>
+            <label class="campo" for="numerodetelefone">Número de telefone:</label>
+            <input formControlName="telefone" placeholder="Número de telefone">
+        </div>
+        <div>
+            <label class="campo" for="email">E-mail:</label>
+            <input formControlName="email" placeholder="Email" type="email">
+        </div>
+        <div>
+            <label class="campo" for="password">Senha:</label>
+            <input formControlName="senha" placeholder="Senha" type="password" (click)="toggleRequisitosSenha()">
+        </div>
+        <div>
+            <label class="campo" for="passwordconfirm">Confirme a senha:</label>
+            <input formControlName="confirmarSenha" placeholder="Confirme a senha" type="password" (click)="toggleRequisitosSenha()">
+        </div>
+        <div *ngIf="mostrarRequisitosSenha" class="requisitos">
+            <p>A senha deve conter:</p>
+            <ul>
+                <li>No mínimo 10 caracteres</li>
+                <li>Uma letra maiúscula</li>
+                <li>Uma letra minúscula</li>
+                <li>Um caractere especial</li>
+            </ul>
 
+        </div>     
+        <div class="termo-container" >
+            <input type="checkbox" formControlName="termo">
+            Aceito os termos e condições
+        </div>
 
+        <div class="button-submit">
+            <button type="submit">Criar conta</button>
+        </div>
+             
+    </form>
+
+    <p>Já tem uma conta? <a routerLink="/Login">Entrar</a></p>
 </div>

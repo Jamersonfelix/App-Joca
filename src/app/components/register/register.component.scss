@@ -1,0 +1,72 @@
+.register-container {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    padding: 20px;
+    font-family: "Inter";
+
+
+    .logo-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 30px;
+
+        .logo{
+            width: 72px;
+            height: 45px;
+            margin-right: 5px;
+        }
+        h2{
+            width: 95px;
+            font-size: 40px; 
+            color: #1b2156;
+            font-weight: 700;
+
+        }
+    }
+
+    .form-container{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .linha{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+    .campo {
+        flex:1;
+    }
+    div{
+        display: flex;
+        flex-direction: column;
+    }
+    input {
+        padding: 5px;
+        margin-top: 5px;
+        border: 2px solid #000;
+        border-radius: 2px;
+        margin: 0 0 10px 0;
+        background-color: #e2dada ;
+    }
+
+    .requisitos {
+        padding: 20px;
+        color: #1b2156;
+
+        p{
+            font-size: 16px;
+            font-weight: 800;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: disc;
+        }
+
+    }
+ }
+
