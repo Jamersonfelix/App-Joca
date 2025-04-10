@@ -68,5 +68,84 @@
         }
 
     }
+    .termo-container {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: flex-start;        
+
+        input {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 18px; 
+            height: 18px;
+            border-radius: 50%; 
+            background: #e2dada; 
+            border: 1px solid #000;
+            cursor: pointer;
+            position: relative;
+
+            &:checked {
+                background-color: #e2dada;
+
+                &::after{
+                    content: "✔";
+                    color: #000;
+                    font-size: 18px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            
+        }
+        p {
+            padding-left: 3px;
+            font-size: 15px;
+            color: #817f7f;
+        }
+        a {
+            color:#1b2156;
+            cursor: pointer;
+            font-weight: 500;
+        }
+    }
+    .button-submit {
+        display: flex;
+        margin: auto;
+
+        button{
+            border: 2px solid #01184e;
+            border-radius: 10px;
+            background-color: white;
+            padding: 4px 40px 4px 40px;
+            font-size: 15px;
+            font-family: "Inter";
+            font-weight: bold;
+            color: #01184e;
+            cursor: pointer;
+        }
+            
+    }
  }
 
+.return-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    font-family: "Inter";
+
+    p{
+        font-size: 15px;
+        color: #817f7f;  
+    }
+    a {
+        color:#1b2156;
+        cursor: pointer;
+        font-weight: 600;
+        margin-top: 5px;
+    }
+}
