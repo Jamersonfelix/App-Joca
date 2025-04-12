@@ -8,8 +8,8 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full'},
     { path: 'login', component: LoginComponent },
-    { path: 'cadastro', component: RegisterComponent },
-    { path: 'recuperar-senha' , component: ForgotPasswordComponent},
+    { path: 'register', component: RegisterComponent },
+    { path: 'forgot-password' , component: ForgotPasswordComponent},
 ];
 
 @NgModule ({
