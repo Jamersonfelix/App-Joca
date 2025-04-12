@@ -3,11 +3,12 @@ import { LoginComponent } from "../login/login.component";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { AppRoutingModule } from '../../app.routes';
 
 
 @Component({
   selector: 'app-register',
-  imports: [ReactiveFormsModule, CommonModule, LoginComponent],
+  imports: [ReactiveFormsModule, CommonModule, AppRoutingModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })
@@ -19,7 +20,7 @@ export class RegisterComponent {
     this.registerForm = this.fb.group({
       nome: ['', Validators.required],
       sobrenome: ['', Validators.required],
-      telefone: ['', Validators.required],
+      telefone: ['', Validators.required,  Validators.pattern(/^\d{10,15}$/)],
       email: ['', Validators.required, Validators.email],
       senha: ['', Validators.required, Validators.minLength(10)],
       confirmarSenha: ['', Validators.required, Validators.minLength(10)],
@@ -36,6 +37,7 @@ export class RegisterComponent {
   onSubmit() {
     if (this.registerForm.valid) {
       console.log('Dados de cadastro:', this.registerForm.value);
+      
       // Enviar dados ao backend no futuro
     }
   }
