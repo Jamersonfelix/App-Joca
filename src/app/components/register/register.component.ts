@@ -2,13 +2,12 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { AppRoutingModule } from '../../app.routes';
 import { RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-register',
-  imports: [ReactiveFormsModule, CommonModule, AppRoutingModule, RouterModule],
+  imports: [ReactiveFormsModule, CommonModule, RouterModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })
@@ -28,6 +27,7 @@ export class RegisterComponent {
     }, {Validators: this.matchPasswords });
   }
 
+  
   matchPasswords(group: FormGroup) {
     const senha = group.get('senha')?.value;
     const confirmarSenha = group.get('confirmarSenha')?.value;
